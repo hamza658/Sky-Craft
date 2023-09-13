@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+
+    {% block stylesheets %}
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
+        <meta name="author" content="Coderthemes">
+
+        <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}">
+
+        <title>Adminto - Responsive Admin Dashboard Template</title>
+        <link href="{{ asset('assets/plugins/fileuploads/css/dropify.min.css') }}" rel="stylesheet" type="text/css" />
+
+        <!--Morris Chart CSS -->
+        <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/icons.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+        <script src="{{ asset('assets/js/modernizr.min.js') }}"></script>
+
+
+
+    {% endblock %}
+
+    {% block javascripts %}
+        <!-- jQuery  -->
+
+
+
+
+        <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+        <script src="{{ asset('assets/js/popper.min.js') }}"></script>
+        <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('assets/js/detect.js') }}"></script>
+        <script src="{{ asset('assets/js/fastclick.js') }}"></script>
+        <script src="{{ asset('assets/js/jquery.blockUI.js') }}"></script>
+        <script src="{{ asset('assets/js/waves.js') }}"></script>
+        <script src="{{ asset('assets/js/jquery.nicescroll.js') }}"></script>
+        <script src="{{ asset('assets/js/jquery.slimscroll.js') }}"></script>
+        <script src="{{ asset('assets/js/jquery.scrollTo.min.js') }}"></script>
+        <script src="{{ asset('assets/js/plugins/jquery-knob/excanvas.js') }}"></script>
+        <script src="{{ asset('assets/plugins/jquery-knob/jquery.knob.js') }}"></script>
+        <script src="{{ asset('assets/plugins/morris/morris.min.js') }}"></script>
+
+        <script src="{{ asset('assets/plugins/raphael/raphael-min.js') }}"></script>
+        <script src="{{ asset('assets/pages/jquery.dashboard.js') }}"></script>
+        <script src="{{ asset('assets/js/jquery.core.js') }}"></script>
+        <script src="{{ asset('assets/js/jquery.app.js') }}"></script>
+        <script src="{{ asset('assets/plugins/fileuploads/js/dropify.min.js') }}"></script>
+
+
+    {% endblock %}
+</head>
+<body class="fixed-left">
+
+<!-- Begin page -->
+<div id="wrapper">
+
+    <!-- Top Bar Start -->
+    <div class="topbar">
+
+        <!-- LOGO -->
+        <div class="topbar-left">
+
+            <a href="{{ path('absence') }}" class="logo"><span>Admin<span>to</span></span><i class="mdi mdi-layers"></i></a>
+
+            <a href="{{ path('app_evenement') }}" class="logo"><span>Admin<span>to</span></span><i class="mdi mdi-layers"></i></a>
+
+        </div>
+
+        <!-- Button mobile view to collapse sidebar menu -->
+        <div class="navbar navbar-default" role="navigation">
+            <div class="container-fluid">
+
+                <!-- Page title -->
+                <ul class="nav navbar-nav list-inline navbar-left">
+                    <li class="list-inline-item">
+                        <button class="button-menu-mobile open-left">
+                            <i class="mdi mdi-menu"></i>
+                        </button>
+                    </li>
+                    <li class="list-inline-item">
+                        <h4 class="page-title">Dashboard</h4>
+                    </li>
+                </ul>
+
+                <nav class="navbar-custom">
+
+                    <ul class="list-unstyled topbar-right-menu float-right mb-0">
+
+                        <li>
+                            <!-- Notification -->
+                            <div class="notification-box">
+                                <ul class="list-inline mb-0">
+                                    <li>
+                                        <a href="javascript:void(0);" class="right-bar-toggle">
+                                            <i class="mdi mdi-bell-outline noti-icon"></i>
+                                        </a>
+                                        <div class="noti-dot">
+                                            <span class="dot"></span>
+                                            <span class="pulse"></span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- End Notification bar -->
+
+                        </li>
+
+                        <li class="hide-phone">
+                            <form class="app-search">
+                                <input type="text" placeholder="Search..."
+                                       class="form-control">
+                                <button type="submit"><i class="fa fa-search"></i></button>
+                            </form>
+                        </li>
+
+                    </ul>
+                </nav>
+            </div><!-- end container -->
+        </div><!-- end navbar -->
+    </div>
+    <!-- Top Bar End -->
+
+
+
+    <!-- ========== Left Sidebar Start ========== -->
+    <div class="left side-menu">
+        <div class="sidebar-inner slimscrollleft">
+
+            <!-- User -->
+            <div class="user-box">
+                <div class="user-img">
+
+                    <img src="{{ asset('assets/images/users/avatar-1.jpg') }}" alt="user-img" title="Mat Helme" class="rounded-circle img-thumbnail img-responsive">
+
+                    <div class="user-status offline"><i class="mdi mdi-adjust"></i></div>
+                </div>
+
+                <ul class="list-inline">
+                    <li class="list-inline-item">
+                        <a href="#" >
+                            <i class="mdi mdi-settings"></i>
+                        </a>
+                    </li>
+
+                    <li class="list-inline-item">
+                        <a href="#" class="text-custom">
+                            <i class="mdi mdi-power"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- End User -->
+
+            <!--- Sidemenu -->
+            <div id="sidebar-menu">
+                <ul>
+                    <li class="text-muted menu-title">Navigation</li>
+
+                    <li class="has_sub">
+
+                        <a href="{{ path('EvenementList') }}" class="waves-effect"><i class="mdi mdi-texture"></i><span class="badge badge-warning pull-right">7</span><span> Gestion Evenement </span> </a>
+
+                        <ul class="list-unstyledtyled">
+
+                        </ul>
+                    </li>
+
+                    <li class="has_sub">
+
+                        <a href="{{ path('AbsenceListe') }}" class="waves-effect"><i class="mdi mdi-view-list"></i> <span>Gestion Absences </span> <span class="menu-arrow"></span></a>
+
+                        <ul class="list-unstyled">
+
+                        </ul>
+                    </li>
+
+                    <li class="has_sub">
+
+                        <a href="/" class="waves-effect"><i class="mdi mdi-chart-donut-variant"></i><span>Gestion Reservation</span> <span class="menu-arrow"></span></a>
+
+                        <ul class="list-unstyled">
+
+                        </ul>
+                    </li>
+
+
+
+
+                    <li>
+                        <a  class="waves-effect"><i class="mdi mdi-view-dashboard"></i> <span> Gestion Vol </span> </a>
+                    </li>
+                    <li>
+
+                        <a href="{{ path('transport') }}"  class="waves-effect"><i class="mdi mdi-view-dashboard"></i> <span> Gestion de transport </span> </a>
+                    </li>
+
+                    <li>
+                        <a  class="waves-effect"><i class="mdi mdi-format-font"></i> <span>Gestion Produit</span> </a>
+                    </li>
+
+                    <li class="has_sub">
+                        <a  class="waves-effect"><i class="mdi mdi-invert-colors"></i> <span> Gestion Commande</span> <span class="menu-arrow"></span></a>
+                        <ul class="list-unstyled">
+
+                        </ul>
+                    </li>
+
+
+                    <li>
+                        <a  class="waves-effect"><i class="mdi mdi-calendar"></i><span>Gestion Ligne commande</span></a>
+                    </li>
+
+                    <li>
+                        <a href="inbox.html" class="waves-effect"><i class="mdi mdi-email"></i><span class="badge badge-purple pull-right">New</span><span>Gestion Reclamation </span></a>
+
+                        <a  class="waves-effect"><i class="mdi mdi-view-dashboard"></i> <span> Gestion Voiture </span> </a>
+                    </li>
+                    <li>
+                        <a  href="/hotel/" class="waves-effect"><i class="mdi mdi-view-dashboard"></i> <span> Gestion Hotels </span> </a>
+                    </li>
+                    <li>
+                        <a href="/user" class="waves-effect"><i class="mdi mdi-view-dashboard"></i> <span> Gestion utilisateur </span> </a>
+                    </li>
+
+
+
+
+
+
+
+                    <li>
+                        <a href="/AbsenceList" class="waves-effect"><i class="mdi mdi-email"></i><span class="badge badge-purple pull-right">New</span><span>Employeés </span></a>
+
+                    </li>
+
+                    <li class="has_sub">
+                        <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-google-pages"></i><span>Gestion Avis</span> <span class="menu-arrow"></span></a>
+                        <ul class="list-unstyled">
+                            <li><a href="page-starter.html">Starter Page</a></li>
+                            <li><a href="page-login.html">Login</a></li>
+                            <li><a href="page-register.html">Register</a></li>
+                            <li><a href="page-recoverpw.html">Recover Password</a></li>
+                            <li><a href="page-lock-screen.html">Lock Screen</a></li>
+                            <li><a href="page-confirm-mail.html">Confirm Mail</a></li>
+                            <li><a href="page-404.html">Error 404</a></li>
+                            <li><a href="page-500.html">Error 500</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="has_sub">
+
+                        <a class="waves-effect"><i class="mdi mdi-layers"></i><span>Logout </span> <span class="menu-arrow"></span></a>
+
+                        <a href={{ path('app_logout') }} class="waves-effect"><i class="mdi mdi-layers"></i><span>Logout </span> <span class="menu-arrow"></span></a>
+
+
+                    </li>
+
+
+
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <!-- Sidebar -->
+
+
+
+
+            <div class="clearfix"></div>
+
+        </div>
+
+    </div>
+    <!-- Left Sidebar End -->
+
+    <footer class="footer text-right">
+        2016 - 2018 © Adminto. Coderthemes.com
+    </footer>
+
+</div>
+
+<div class="content-page">
+    <!-- Start content -->
+    <div class="content">
+        <div class="container-fluid">
+
+
+            <div class="row">
+
+                <div class="col-12">
+                    <div class="card-box">
+                        <div class="dropdown pull-right">
+                            <a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown" aria-expanded="false">
+                                <i class="mdi mdi-dots-vertical"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <!-- item-->
+                                <a href="javascript:void(0);" class="dropdown-item">Action</a>
+                                <!-- item-->
+                                <a href="javascript:void(0);" class="dropdown-item">Another action</a>
+                                <!-- item-->
+                                <a href="javascript:void(0);" class="dropdown-item">Something else</a>
+                                <!-- item-->
+                                <a href="javascript:void(0);" class="dropdown-item">Separated link</a>
+                            </div>
+                        </div>
+
+
+
+                        {% block body %}{% endblock %}
+
+
+
+</body>
+
+
+
+
+
+
+{% block ajaxsearch %}
+    <script>
+        $( document ).ready(function() {
+            var currentRequest = null;
+            $("#searchsearch1").keyup(function(e){
+                var value = $(this).val();
+                if(currentRequest != null) {
+                    currentRequest.abort();
+                }
+                currentRequest = $.ajax({
+
+                    url : "{{ path('utilsearchuser') }}",
+                    type : 'GET',
+                    data: {
+                        'searchValue' : value
+                    },
+
+                    success : function(retour)
+                    {
+                        $('#tabletable1').html(retour);
+
+                    },//script recherche ajax
+                });
+                return false;
+            });
+        });
+    </script>
+{% endblock %}
+
+
+
+
+</html>

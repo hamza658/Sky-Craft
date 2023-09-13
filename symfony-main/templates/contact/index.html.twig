@@ -1,0 +1,27 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+    <!-- ============================================================== -->
+<!-- Start right Content here -->
+<!-- ============================================================== -->
+<div class="content-page">
+    <!-- Start content -->
+    <div class="content">
+        <div class="container-fluid">
+
+
+            <div class="row">
+                {% for message in app.flashes('message')%}
+                <div class="alert alert-success" role="alert">
+                    {{ message }}
+                </div>
+                {% endfor %}
+                <h1>Send Mail :        </h1>
+                {{ form(contactForm) }}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,51 @@
+
+
+
+
+
+
+
+
+<h1>Les Absences</h1>
+
+
+
+
+<table class="table" border=3>
+    <thead>
+
+
+    <tr>
+        <td ><h3> <a>nom</a></h3></td>
+        <td ><h3> <a>EtatAbsence</a></h3></td>
+        <td ><h3> <a>DateDebut</a></h3></td>
+        <td ><h3> <a>DateFin</a></h3></td>
+
+
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+
+
+
+<td>
+    {{ id.username}}
+</td>
+
+
+        <td>
+            {{ etatAbsence }}
+        </td>
+        <td>
+            {{ dateAb|date('d-m-Y H:i') }}
+        </td>
+        <td>
+            {{ finAb |date('d-m-Y H:i')}}
+        </td>
+
+
+    </tr>
+    </tbody>
+</table>

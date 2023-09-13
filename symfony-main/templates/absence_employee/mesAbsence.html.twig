@@ -1,0 +1,101 @@
+{% extends "base3.html.twig" %}
+
+{% block body %}
+
+    <!-- ============================================================== -->
+    <!-- Start right Content here -->
+    <!-- ============================================================== -->
+    <div class="content-page">
+    <!-- Start content -->
+    <div class="content">
+    <div class="container-fluid">
+
+
+    <div class="row">
+
+    <div class="col-12">
+    <div class="card-box">
+    <div class="dropdown pull-right">
+        <a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown" aria-expanded="false">
+            <i class="mdi mdi-dots-vertical"></i>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right">
+            <!-- item-->
+            <a href="javascript:void(0);" class="dropdown-item">Action</a>
+            <!-- item-->
+            <a href="javascript:void(0);" class="dropdown-item">Another action</a>
+            <!-- item-->
+            <a href="javascript:void(0);" class="dropdown-item">Something else</a>
+            <!-- item-->
+            <a href="javascript:void(0);" class="dropdown-item">Separated link</a>
+        </div>
+    </div>
+
+    <p class="text-muted font-14 m-b-20">
+    <table class="table">
+
+<td>
+
+    <h4 class="m-t-0 header-title">Mes Absences</h4></td>
+          <td>  <form class="w_search">
+                <div class="sidebar-search">
+                    <div class="input-group custom-search-form">
+                        <input type="text" id="searchsearch1" name="searchsearch" class="form-control" placeholder="Search">
+                    </div>
+                    <!-- /input-group --></div></form></td>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <td class="font-600" >etatAbsence</td>
+
+            <td class="font-600">DateAbsence</td>
+            <td class="font-600">FinAbsence</td>
+
+
+
+
+
+        </tr>
+        </thead>
+        <tbody id="all">
+
+        {% for Absence in Absences %}
+        <tr {% if(Absence.id.username=="sahar") %} >
+
+
+            <td>
+
+                {{ Absence.etatAbsence }}
+
+            </td>
+            <td>
+
+                {{ Absence.dateAb |date('d-m-Y H:i') }}
+
+            </td>
+            <td>
+
+                {{ Absence.finAb |date('d-m-Y H:i') }}
+
+            </td>
+        </tr {% endif %}>
+            {% endfor %}
+
+        </tbody>
+    </table>
+            <!--Start of Tawk.to Script-->
+            <script type="text/javascript">
+                var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+                (function(){
+                    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+                    s1.async=true;
+                    s1.src='https://embed.tawk.to/625dc81a7b967b11798b4d37/1g0v5bach';
+                    s1.charset='UTF-8';
+                    s1.setAttribute('crossorigin','*');
+                    s0.parentNode.insertBefore(s1,s0);
+                })();
+            </script>
+            <!--End of Tawk.to Script-->
+
+{% endblock %}

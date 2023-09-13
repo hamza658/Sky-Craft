@@ -1,0 +1,40 @@
+
+{% block body %}
+    <h1 align="center">Chauffeur</h1>
+
+    <table class="table">
+        <tbody>
+            
+            <tr>
+                <th>Nom</th>
+                <td>{{ chauffeur.nomChauffeur }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ chauffeur.prenomChauffeur }}</td>
+            </tr>
+            <tr>
+                <th>Cin</th>
+                <td>{{ chauffeur.cinChauffeur }}</td>
+            </tr>
+            <tr>
+                <th>Téléphone</th>
+                <td>{{ chauffeur.numTelChauffeur }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ chauffeur.emailChauffeur }}</td>
+            </tr>
+            <tr>
+                <th>Date de naissance</th>
+                <td>{{ chauffeur.dateNaissanceChauffeur ? chauffeur.dateNaissanceChauffeur|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>RIB bancaire</th>
+                <td>{{ chauffeur.numCompteBancaire }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    
+{% endblock %}

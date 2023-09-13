@@ -1,0 +1,59 @@
+
+
+
+
+
+
+
+
+<h1>TICKET</h1>
+
+
+
+
+<table class="table" border=3>
+    <thead>
+
+
+    <tr>
+        <td ><h3> <a>Detail</a></h3></td>
+
+        <td ><h3> <a>DateDebut</a></h3></td>
+
+        <td ><h3> <a>DateFin</a></h3></td>
+        <td ><h3> <a>Duree</a></h3></td>
+
+
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+
+
+
+        <td>
+
+            {{ detail }}
+
+        </td>
+        <td>
+
+            {{ dateDebut |date('d-m-Y H:i') }}
+
+        </td>
+        <td>
+
+            {{ dateFin |date('d-m-Y H:i') }}
+
+        </td>
+        <td>
+
+            {{ dureeEv  }}
+
+        </td>
+
+
+    </tr>
+    </tbody>
+</table>

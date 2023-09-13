@@ -1,0 +1,114 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+    <!-- ============================================================== -->
+    <!-- Start right Content here -->
+    <!-- ============================================================== -->
+    <div class="content-page">
+    <!-- Start content -->
+    <div class="content">
+    <div class="container-fluid">
+
+
+    <div class="row">
+    <a href="{{ path('AbsenceListe') }}">
+        <i class="fa fa-arrow-circle-left" style="font-size: 30px;"></i>
+
+    </a>
+
+
+    <div class="col-12">
+    <div class="card-box">
+    <div class="dropdown pull-right">
+        <a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown" aria-expanded="false">
+            <i class="mdi mdi-dots-vertical"></i>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right">
+            <!-- item-->
+            <a href="javascript:void(0);" class="dropdown-item">Action</a>
+            <!-- item-->
+            <a href="javascript:void(0);" class="dropdown-item">Another action</a>
+            <!-- item-->
+            <a href="javascript:void(0);" class="dropdown-item">Something else</a>
+            <!-- item-->
+            <a href="javascript:void(0);" class="dropdown-item">Separated link</a>
+        </div>
+    </div>
+
+    <p class="text-muted font-14 m-b-20">
+
+
+    <h4 class="m-t-0 header-title">List Des Absences</h4>
+    <table class="table">
+        <thead>
+        <tr>
+            <td class="font-600">nom</td>
+            <td class="font-600">EtatAbsence</td>
+            <td class="font-600">DateAbsence</td>
+            <td class="font-600">FinAbsence</td>
+            <td></td>
+            <td></td>
+            <td class="font-600">Modifier</td>
+            <td class="font-600">Supprimer</td>
+
+
+
+
+
+        </tr>
+        </thead>
+        <tbody id="all">
+        {% for Absence in Absences %}
+            <tr {% if(Absence.id.username=="oumaima") %}>
+                <td>
+
+                    {{ Absence.id.username}}
+
+                </td>
+
+                <td>
+
+                    {{ Absence.etatAbsence }}
+
+                </td>
+                <td>
+
+                    {{ Absence.dateAb |date('d-m-Y H:i') }}
+
+                </td>
+                <td>
+
+                    {{ Absence.finAb |date('d-m-Y H:i') }}
+
+                </td>
+
+
+                <td><a href="{{ path('showpdf',{'idAb': Absence.idAb}) }}">
+                        <button type="button" class="btn btn-primary">Imprimer</button>
+                    </a></td>
+                <td><a href="{{ path('contact') }}">
+                        <button type="button" class="btn btn-primary" >Send Mail</button>
+                    </a></td>
+                <td>
+
+                    <a href="{{ path('edit_abs', {'idAb': Absence.idAb}) }}"> <i class="fa fa-pencil"></i></a>
+
+
+
+                </td>
+
+                <td>
+                    <a href="{{ path('delete_abs', {'idAb': Absence.idAb}) }}"
+
+                       onclick="return confirm('Etes vous sûr de supprimer ');"><i class="fa fa-trash" ></i> </a>
+                <td>
+
+
+
+            </tr {% endif %}>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

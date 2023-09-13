@@ -1,0 +1,60 @@
+
+
+{% block body %}
+
+<style>
+    h1{
+        font-family: Arial, Helvetica, serif ;
+        text-align: center;
+
+        color: #005eff;
+    }
+    table {
+        width: auto;
+        text-align: center;
+        align-content: center;
+        table-border-color-dark: #0b2e13;
+        position: center;}
+</style>
+
+   <u> <h1>List Hotel</h1></u>
+
+    <table class="table">
+
+        <thead>
+        <style>
+            .center {
+                text-align: center;
+            }
+            .center img {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        </style>
+            <tr>
+                <th>Id</th>
+                <th>Libelle</th>
+                <th>Locale</th>
+                <th>Caracteristique</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for hotel in hotels %}
+            <tr>
+                <td>{{ hotel.id }}</td>
+                <td>{{ hotel.libelle }}</td>
+                <td>{{ hotel.locale }}</td>
+                <td>{{ hotel.caracteristique }}</td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+
+    </table>
+
+
+{% endblock %}

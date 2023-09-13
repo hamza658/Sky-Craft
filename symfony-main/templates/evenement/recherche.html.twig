@@ -1,0 +1,13 @@
+{% for utils in Evenements %}
+
+    <tr>
+        <td>{{ utils.detail }}</td>
+        <td>{{ utils.commantaire }}</td>
+
+
+    </tr>
+{% else %}
+    <tr>
+        <td colspan="6">no records found</td>
+    </tr>
+{% endfor %}

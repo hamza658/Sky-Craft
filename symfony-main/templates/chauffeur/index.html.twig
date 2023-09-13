@@ -1,0 +1,89 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Chauffeur index{% endblock %}
+
+{% block body %}
+ <!-- ============================================================== -->
+    <!-- Start right Content here -->
+    <!-- ============================================================== -->
+    <div class="content-page">
+    <!-- Start content -->
+    <div class="content">
+    <div class="container-fluid">
+
+
+    <div class="row">
+
+    <div class="col-12">
+    <div class="card-box">
+    <div class="dropdown pull-right">
+        <a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown" aria-expanded="false">
+            <i class="mdi mdi-dots-vertical"></i>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right">
+            <!-- item-->
+            <a href="javascript:void(0);" class="dropdown-item">Action</a>
+            <!-- item-->
+            <a href="javascript:void(0);" class="dropdown-item">Another action</a>
+            <!-- item-->
+            <a href="javascript:void(0);" class="dropdown-item">Something else</a>
+            <!-- item-->
+            <a href="javascript:void(0);" class="dropdown-item">Separated link</a>
+        </div>
+    </div>
+
+    <p class="text-muted font-14 m-b-20">
+     
+    <h1>Liste des chauffeurs</h1>
+<a href="{{ path('chauffeur_new') }}">
+            <button type="button" class="btn btn-purple btn-rounded w-md waves-effect waves-light m-b-5">Ajouter un chauffeur</button>
+
+    </a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Cin</th>
+                <th>Téléphone</th>
+                <th>E-mail</th>
+                <th>Date de naissance</th>
+                
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for chauffeur in chauffeurs %}
+            <tr>
+               
+                <td>{{ chauffeur.nomChauffeur }}</td>
+                <td>{{ chauffeur.prenomChauffeur }}</td>
+                <td>{{ chauffeur.cinChauffeur }}</td>
+                <td>{{ chauffeur.numTelChauffeur }}</td>
+                <td>{{ chauffeur.emailChauffeur }}</td>
+                <td>{{ chauffeur.dateNaissanceChauffeur ? chauffeur.dateNaissanceChauffeur|date('Y-m-d') : '' }}</td>
+              
+                <td>
+
+                    <a href="{{ path('chauffeur_edit', {'idChauffeur': chauffeur.idChauffeur}) }}"> <i class="fa fa-pencil"></i></a>
+
+
+
+                
+                
+                    <a href="{{ path('chauffeur_delete', {'idChauffeur': chauffeur.idChauffeur}) }}"
+
+                       onclick="return confirm('Etes vous sûr de supprimer ');"><i class="fa fa-trash" ></i> </a>
+                
+                    <a href="{{ path('chauffeur_show',{'idChauffeur': chauffeur.idChauffeur}) }}"><i class="fa fa-list" style="color:#0eac5c;font-size:20px"></i> </a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

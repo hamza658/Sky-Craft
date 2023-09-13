@@ -1,0 +1,88 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Voiture index{% endblock %}
+
+{% block body %}
+    <!-- ============================================================== -->
+    <!-- Start right Content here -->
+    <!-- ============================================================== -->
+    <div class="content-page">
+    <!-- Start content -->
+    <div class="content">
+    <div class="container-fluid">
+
+
+    <div class="row">
+
+    <div class="col-12">
+    <div class="card-box">
+    <div class="dropdown pull-right">
+        <a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown" aria-expanded="false">
+            <i class="mdi mdi-dots-vertical"></i>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right">
+            <!-- item-->
+            <a href="javascript:void(0);" class="dropdown-item">Action</a>
+            <!-- item-->
+            <a href="javascript:void(0);" class="dropdown-item">Another action</a>
+            <!-- item-->
+            <a href="javascript:void(0);" class="dropdown-item">Something else</a>
+            <!-- item-->
+            <a href="javascript:void(0);" class="dropdown-item">Separated link</a>
+        </div>
+    </div>
+
+    <p class="text-muted font-14 m-b-20">
+     
+    <table class="table">
+
+<td>
+
+    
+    <h1>Liste des voitures</h1>
+ <a href="{{ path('voiture_new') }}">
+            <button type="button" class="btn btn-purple btn-rounded w-md waves-effect waves-light m-b-5">Ajouter une voiture</button>
+
+    </a>
+    <table class="table">
+        <thead>
+            <tr>
+              
+                <th>Matricule</th>
+                <th>Marque</th>
+                <th>Couleur</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for voiture in voitures %}
+            <tr>
+               
+                <td>{{ voiture.matricule }}</td>
+                <td>{{ voiture.marque }}</td>
+                <td>{{ voiture.couleur }}</td>
+       <td>
+
+                    <a href="{{ path('voiture_edit', {'idVoiture': voiture.idVoiture}) }}"> <i class="fa fa-pencil"></i></a>
+
+
+
+                
+                
+                    <a href="{{ path('voiture_delete', {'idVoiture': voiture.idVoiture}) }}"
+
+                       onclick="return confirm('Etes vous sûr de supprimer ');"><i class="fa fa-trash" ></i> </a>
+                
+                    <a href="{{ path('voiture_show',{'idVoiture': voiture.idVoiture}) }}"><i class="fa fa-list" style="color:#0eac5c;font-size:20px"></i> </a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    
+{% endblock %}
